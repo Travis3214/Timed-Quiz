@@ -11,3 +11,15 @@ clear.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
 });
+
+allScores = JSON.parse(allScores);
+
+if (allScores !==null) {
+
+    for (var i = 0; i < allScores.length; i++) {
+
+        var addLi = document.createElement("li");
+        addLi.textContent = allScores[i].initials + " " + allScores[i].score;
+        highScore.appendChild(addLi);
+    }
+};
