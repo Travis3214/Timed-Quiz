@@ -10,19 +10,19 @@ var questions = [
         c: "exArray[1]"
     },
     {
-        q: "Data types include all of the following EXCEPT ____",
+        q: "Data types include all of the following EXCEPT _____",
         a: ["Strings", "Alerts", "Numbers", "Booleans"],
         c: "Alerts"
     },
     {
-        q: "",
-        a: ["Answer choices go here"],
-        c: "Correct answer goes here"
+        q: "Your websites title tag should go in what section of the HTML page?",
+        a: ["Footer", "Body", "Main", "Head"],
+        c: "Head"
     },
     {
-        q: "Questions go here:",
-        a: ["Answer choices go here"],
-        c: "Correct answer goes here"
+        q: "An array is enclosed within ____?",
+        a: ["[]", "{}", "()", "||"],
+        c: "[]"
     },
 
 ];

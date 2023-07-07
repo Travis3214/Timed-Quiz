@@ -20,3 +20,4 @@
 //stop to the question function log score - read the interval value and request intials from user
 
 //write response and time remaining value to local storage
+
