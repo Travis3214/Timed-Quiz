@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Timed Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+
+  <body>
+    <a href="./highscores.html">Highscores</a>
+
+    <section>
+      <div id="content">
+          <div id="timer"></div>
+          <div id="questions">
+            <h1>Coding quiz challange</h1>
+            <p>This is a timed quiz that will test your coding knowledge. Incorrect answers will deduct 10 seconds from the timer. Finish with as much time as possible.</p>
+            <ul id="choices"></ul>
+            <button class="startButton" id="startBtn">Start Quiz</button>
+          </div>
+    </section>
+    
+    <script src="./assets/js/logic.js"></script>
+    <script src="./assets/js/scores.js"></script>
+    <script src="./assets/js/questions.js"></script>
+  </body>
+</html>
