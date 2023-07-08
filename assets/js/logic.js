@@ -101,24 +101,24 @@ function over() {
         questionsDiv.appendChild(createP2);
     }
 
-    //This creates a lebel on the page to tell the user to enter their name//
-    createLabel.setAttribute("id", "createLabel");
-    createLabel.textContent = "Enter your name: ";
-    questionsDiv.appendChild(createLabel);
+        //This creates a lebel on the page to tell the user to enter their name//
+        createLabel.setAttribute("id", "createLabel");
+        createLabel.textContent = "Enter your name: ";
+        questionsDiv.appendChild(createLabel);
 
-    //This creates an input on the page so the user can type their name and save their HighScore//
-    createInput.setAttribute("type", "text");
-    createInput.setAttribute("id", "name");
-    createInput.textContent = "";
-    questionsDiv.appendChild(createInput);
+        //This creates an input on the page so the user can type their name and save their HighScore//
+        createInput.setAttribute("type", "text");
+        createInput.setAttribute("id", "name");
+        createInput.textContent = "";
+        questionsDiv.appendChild(createInput);
 
-    //This creates a submit button on the page to save the users score//
-    
-    createSubmit.setAttribute("type", "submit");
-    createSubmit.setAttribute("id", "Submit");
-    createSubmit.textContent = "Submit";
-    questionsDiv.appendChild(createSubmit);
-}
+        //This creates a submit button on the page to save the users score//
+        createSubmit.setAttribute("type", "submit");
+        createSubmit.setAttribute("id", "Submit");
+        createSubmit.textContent = "Submit";
+        questionsDiv.appendChild(createSubmit);
+        }
+        
 //This creates an event listener to save name and score to the storage//
 var createSubmit = document.createElement("button");
     createSubmit.addEventListener("click", function () {
