@@ -8,6 +8,9 @@ var questionsDiv = document.querySelector("#questionsDiv");
 var ulCreate = document.createElement("ul");
 var penalty = 10;
 var wrapper = document.querySelector("#wrapper");
+var createLabel = document.createElement("label");
+var createInput = document.createElement("input");
+var createSubmit = document.createElement("button");
 
 //This starts the timer and displays the questions on screen//
 timer.addEventListener("click", function () {
@@ -99,22 +102,43 @@ function over() {
     }
 
     //This creates a lebel on the page to tell the user to enter their name//
-    var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
     createLabel.textContent = "Enter your name: ";
     questionsDiv.appendChild(createLabel);
 
     //This creates an input on the page so the user can type their name and save their HighScore//
-    var createInput = document.createElement("input");
     createInput.setAttribute("type", "text");
     createInput.setAttribute("id", "name");
     createInput.textContent = "";
     questionsDiv.appendChild(createInput);
 
     //This creates a submit button on the page to save the users score//
-    var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
     createSubmit.textContent = "Submit";
     questionsDiv.appendChild(createSubmit);
 }
+//This creates an event listener to save name and score to the storage//
+    createSubmit.addEventListener("click", function () {
+    var name = createInput.value;
+    if (name === null) {
+        console.log("No value entered!");
+
+    } else {
+        var finalScore = {
+            name: name,
+            score: timeRemaining
+        }
+        console.log(finalScore);
+        var allScores = localStorage.getItem("allScores");
+        if (allScores === null) {
+            allScores = [];
+        } else {
+            allScores = JSON.parse(allScores);
+        }
+        allScores.push(finalScore);
+        var newScore = JSON.stringify(allScores);
+        localStorage.setItem("allScores", newScore);
+        window.location.replace("HighScores.html");
+    }
+});
