@@ -13,18 +13,18 @@
     <a href="./highscores.html">Highscores</a>
 
     <section>
-      <div id="content">
-          <div id="timer"></div>
-          <div id="questions">
+      <div id="wrapper">
+          <div id="currentTime"></div>
+          <div id="questionsDiv">
             <h1>Coding quiz challange</h1>
-            <p>This is a timed quiz that will test your coding knowledge. Incorrect answers will deduct 10 seconds from the timer. Finish with as much time as possible.</p>
-            <ul id="choices"></ul>
-            <button class="startButton" id="startBtn">Start Quiz</button>
+            <p>This is a timed quiz that will test your coding knowledge. Incorrect answers will deduct 10 seconds from the timer. Finish with as much time left as possible.</p>
+            <ul id="choicesUl"></ul>
+            <button id="startTime">Start Quiz</button>
           </div>
     </section>
     
-    <script src="./assets/js/logic.js"></script>
-    <script src="./assets/js/scores.js"></script>
     <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/logic.js"></script>
+    
   </body>
 </html>
