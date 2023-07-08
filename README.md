@@ -6,7 +6,7 @@ This is a timed quiz that will test your coding knowledge. It is designed to sta
 N/A
 
 ## Usage
-Link 
+https://travis3214.github.io/Timed-Quiz/
 
 ## License
 N/A
