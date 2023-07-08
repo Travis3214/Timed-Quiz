@@ -47,3 +47,31 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
+
+//This is a function to see if the user got the answer correct and responds accordingly//
+function compare(event) {
+    var element = event.target;
+    if (element.matches("li")) {
+
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+
+        if (element.textContent == questions[questionIndex].c) {
+            score++;
+            createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].c;
+
+        } else {
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].c;
+        }
+    }
+    //This is to display what number question you are on//
+    questionIndex++;
+    if (questionIndex >= questions.length) {
+        allDone();
+        createDiv.textContent = "End of the quiz!" + " " + "You got " + score + "/" + questions.length + " Correct!";
+    } else {
+        render(questionIndex);
+    }
+    questionsDiv.appendChild(createDiv);
+}
