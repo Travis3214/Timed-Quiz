@@ -10,7 +10,7 @@ var penalty = 10;
 var wrapper = document.querySelector("#wrapper");
 var createLabel = document.createElement("label");
 var createInput = document.createElement("input");
-var createSubmit = document.createElement("button");
+
 
 //This starts the timer and displays the questions on screen//
 timer.addEventListener("click", function () {
@@ -113,12 +113,14 @@ function over() {
     questionsDiv.appendChild(createInput);
 
     //This creates a submit button on the page to save the users score//
+    
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
     createSubmit.textContent = "Submit";
     questionsDiv.appendChild(createSubmit);
 }
 //This creates an event listener to save name and score to the storage//
+var createSubmit = document.createElement("button");
     createSubmit.addEventListener("click", function () {
     var name = createInput.value;
     if (name === null) {
