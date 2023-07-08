@@ -19,7 +19,7 @@ timer.addEventListener("click", function () {
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
-                allDone();
+                over();
                 currentTime.textContent = "Time's up!";
             }
         }, 1000);
@@ -68,10 +68,53 @@ function compare(event) {
     //This is to display what number question you are on//
     questionIndex++;
     if (questionIndex >= questions.length) {
-        allDone();
+        over();
         createDiv.textContent = "End of the quiz!" + " " + "You got " + score + "/" + questions.length + " Correct!";
     } else {
         render(questionIndex);
     }
     questionsDiv.appendChild(createDiv);
+}
+//This function is to determine your time left and make it your score//
+function over() {
+    questionsDiv.innerHTML = "";
+    currentTime.innerHTML = "";
+
+    var createH1 = document.createElement("h1");
+    createH1.setAttribute("id", "createH1");
+    createH1.textContent = "All Done!"
+
+    questionsDiv.appendChild(createH1);
+
+    var createP = document.createElement("p");
+    createP.setAttribute("id", "createP");
+
+    questionsDiv.appendChild(createP);
+    if (secondsLeft >= 0) {
+        var timeRemaining = secondsLeft;
+        var createP2 = document.createElement("p");
+        clearInterval(holdInterval);
+        createP.textContent = "Your final score is: " + timeRemaining;
+        questionsDiv.appendChild(createP2);
+    }
+
+    //This creates a lebel on the page to tell the user to enter their name//
+    var createLabel = document.createElement("label");
+    createLabel.setAttribute("id", "createLabel");
+    createLabel.textContent = "Enter your name: ";
+    questionsDiv.appendChild(createLabel);
+
+    //This creates an input on the page so the user can type their name and save their HighScore//
+    var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "name");
+    createInput.textContent = "";
+    questionsDiv.appendChild(createInput);
+
+    //This creates a submit button on the page to save the users score//
+    var createSubmit = document.createElement("button");
+    createSubmit.setAttribute("type", "submit");
+    createSubmit.setAttribute("id", "Submit");
+    createSubmit.textContent = "Submit";
+    questionsDiv.appendChild(createSubmit);
 }
